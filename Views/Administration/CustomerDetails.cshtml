@@ -1,0 +1,84 @@
+﻿@using Pop.ly.Models
+@using Pop.ly.Models.Database
+@{
+    ViewBag.Title = "CustomerDetails";
+}
+
+
+
+<div class="container pt-4 mt-4">
+
+    <div class="CustomerDetailContainer mt-4 mb-4">
+        <div class="DetailColumn">
+            <div class="CustomerPortrait">
+                <i class="fas fa-user"></i>
+            </div>
+            <div>
+                <ul class="CustomerDetailsList">
+                    <li><b>@Model.Customer.FirstName @Model.Customer.LastName</b></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> @Model.Customer.Email</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> @Model.Customer.PhoneNumber</li>
+                </ul>
+            </div>
+        </div>
+        <div class="DetailColumn">
+            <ul class="CustomerDetailsList">
+                <li><b><i class="fas fa-credit-card"></i> Billing Address</b></li>
+                <li>@Model.Customer.BillingAddress</li>
+                <li>@Model.Customer.BillingZip @Model.Customer.BillingCity</li>
+            </ul>
+        </div>
+    </div>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date</th>
+                <th scope="col">Cost</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.Orders.AllOrders)
+            {
+                <tr>
+                    <th scope="row">@obj.Order.ID</th>
+                    <td>@obj.Order.User.FirstName @obj.Order.User.LastName</td>
+                    <td>@obj.Order.User.Email</td>
+                    <td>@obj.Order.OrderDate</td>
+                    <td>@obj.TotalCost</td>
+                    <td><a href="#" data-toggle="collapse" data-target="#Order-@obj.Order.ID">View Details</a>
+                </tr>
+                    <tr>
+                        <td colspan="6">
+                            <div id="Order-@obj.Order.ID" class="collapse">
+                                <table class="w-100">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Movie</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var row in obj.OrderRows)
+                                        {
+                                            <tr>
+                                                <td><a href="/Movie/?T=@row.Movie.Title&Y=@row.Movie.ReleaseYear">@row.Movie.Title</a></td>
+                                                <td>@row.Quantity</td>
+                                                <td>@row.Price</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

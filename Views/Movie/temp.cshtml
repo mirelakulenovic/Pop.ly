@@ -1,0 +1,13 @@
+﻿@model Pop.ly.Models.Database.Movie
+
+<a href="/Movie/?T=@Model.Title&Y=@Model.ReleaseYear">
+    <div class="SingleMovie" style="background-image: url(@Model.CoverArt)">
+        <div class="SingleMovieDetails">
+            <h5>@Model.Title</h5>
+            <p class="">
+                @Model.ReleaseYear
+                <div class="MovieCardRating">@Model.Rating</div>
+            </p>
+        </div>
+    </div>
+</a>

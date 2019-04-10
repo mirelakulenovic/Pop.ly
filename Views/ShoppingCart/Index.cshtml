@@ -1,0 +1,11 @@
+﻿@model Pop.ly.Models.ShoppingCart
+@{
+    ViewBag.Title = "Cart";
+}
+
+<div class="container pt-4">
+    <div id="CartContainer">
+        @Html.Partial("_CartPartial", Model)
+    </div>
+    <a href="/ShoppingCart/Checkout" type="button" class="btn btn-success">Proceed to Checkout</a>
+</div>

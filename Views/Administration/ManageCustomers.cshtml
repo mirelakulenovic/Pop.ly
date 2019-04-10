@@ -1,0 +1,29 @@
+﻿@Model List<Pop.ly.Models.ApplicationUser>
+@{
+    ViewBag.Title = "ManageCustomers";
+}
+
+<div class="container pt-4 mt-4">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email Address</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <th>@obj.FirstName</th>
+                    <td>@obj.LastName</td>
+                    <td>@obj.Email</td>
+                    <td><a href="/Administration/CustomerDetails/?M=@obj.Email">View Details</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

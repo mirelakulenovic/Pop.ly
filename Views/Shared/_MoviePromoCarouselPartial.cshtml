@@ -1,0 +1,43 @@
+﻿@using Pop.ly.Models.Database
+@model IEnumerable<Movie>
+
+@{ Movie[] movies = Model.ToArray();
+        }
+<div id="promo-carousel" class="carousel slide" data-ride="carousel">
+    @*This code handles the indicators*@
+    <ol class="carousel-indicators">
+        <li data-target="#promo-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#promo-carousel" data-slide-to="1"></li>
+        <li data-target="#promo-carousel" data-slide-to="2"></li>
+    </ol>
+
+    @*Handles the carousel items. Figure out a system to do this dynamically.*@
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" style="background-image: url(@movies[0].PromoArt)">
+            <div class="carousel-caption">
+                <h4>@movies[0].Title</h4>
+                <p>@movies[0].Description.Substring(0, 180) ... <a href="/Movie/?T=@movies[0].Title&Y=@movies[0].ReleaseYear">Read more</a></p>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: url(@movies[1].PromoArt)">
+            <div class="carousel-caption">
+                <h4>@movies[1].Title</h4>
+                <p>@movies[1].Description.Substring(0, 180) ... <a href="/Movie/?T=@movies[1].Title&Y=@movies[1].ReleaseYear">Read more</a></p>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: url(@movies[2].PromoArt)">
+            <div class="carousel-caption">
+                <h4>@movies[2].Title</h4>
+                <p>@movies[2].Description.Substring(0, 180) ... <a href="/Movie/?T=@movies[2].Title&Y=@movies[2].ReleaseYear">Read more</a></p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#promo-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#promo-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

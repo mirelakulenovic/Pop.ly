@@ -1,0 +1,53 @@
+﻿@model Pop.ly.Models.ShoppingCart
+
+
+<div class="ShoppingCartContainer">
+    <div class="CartContainerHead">Order Total: @Model.TotalCost<i class="fas fa-dollar-sign"></i></div>
+    <div class="CartItemContainer">
+        @foreach (var item in Model.Items)
+        {
+            var indx = "CartRow" + @Model.Items.IndexOf(item).ToString();
+            var itemCost = item.CostPerItem * item.Quantity;
+            var description = item.Movie.Description.Length <= 180 ? item.Movie.Description : item.Movie.Description.Substring(0, 180) + "...";
+            <div class="CartItem HoverGlow">
+                <div class="CartItemHeader">
+                    <div class="CartItemHeaderMovieTitle">
+                        @item.Movie.Title
+                    </div>
+                    <div class="CartItemRemove">
+                        <button id="RemoveFromCart" type="button" style="border-radius:0px;" class="btn btn-danger" onclick="RemoveFromCart(@Model.Items.IndexOf(item))"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="CartItemBody">
+                    <div class="CartItemImage" style="background-image: url(@item.Movie.CoverArt)">
+                        &nbsp;
+                    </div>
+                    <div class="CartItemDescription">
+                        @description <a href="/Movie/?T=@item.Movie.Title&Y=@item.Movie.ReleaseYear">(Read more)</a>
+                    </div>
+                    <div class="CartItemCost">
+                        <i class="fas fa-dollar-sign">&nbsp;</i>@itemCost
+                    </div>
+                </div>
+                <div class="CartItemFooter">
+                    <div class="CartItemCountContainer">
+                        <div class="CartItemDecreaseQuantity">
+                            <button onclick="DecreaseItemQuantity(@item.Movie.ID)" type="button" class="btn btn-golden"><i class="fas fa-minus"></i></button>
+                        </div>
+                        <div class="CartItemQuantity">
+                            @item.Quantity
+                        </div>
+                        <div class="CartItemIncreaseQuantity">
+                            <button onclick="IncreaseItemQuantity(@item.Movie.ID)" type="button" class="btn btn-golden"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+
+
+        }
+    </div>
+</div>

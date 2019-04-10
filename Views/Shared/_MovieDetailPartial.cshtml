@@ -1,0 +1,51 @@
+﻿@model Pop.ly.Models.Database.Movie
+
+<div id="promo-background" class="MovieDetailPromoBackground" style="background-image: url(@Model.PromoArt);">
+    <div id="movie-details" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div id="MovieDetailsCoverSection" class="col-sm-3">
+                    <img id="DetailCover" src="@Model.CoverArt" />
+                    <button id="TrailerToggle" data-toggle="modal" data-target="#TrailerOverlay" type="button" class="btn btn-square-top btn-secondary"><i class="fas fa-video"></i> View Trailer</button>
+                </div>
+                <div class="col-sm-7">
+                    <div class="row">
+                        <h2 id="DetailsMovieTitle">@Model.Title</h2>
+                    </div>
+                    <div class="row pt-1">
+                        <p class="justify p-0 m-0">
+                            @Model.Genre |&nbsp;<a href="/Browse/?Year=@Model.ReleaseYear" class="badge badge-pill badge-golden">@Model.ReleaseYear</a>
+                            <span class="stars">@Model.Rating</span>
+                        </p>
+                    </div>
+                    <div class="row pt-1">
+                        @Model.Description
+                    </div>
+                    <div class="row pt-1">
+                        Directed by: @Model.Director
+                    </div>
+                    <div class="row pt-1">
+                        <button id="AddToCart" type="button" data-cost=@Model.Price class="btn btn-secondary" onclick="AddToCart(@Model.ID)"><i class="fas fa-shopping-cart"></i> Add to Cart <span class="badge badge-light"><i class="fas fa-dollar-sign"></i> @Model.Price</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal overlay for the trailer -->
+<div class="modal fade" id="TrailerOverlay" tabindex="-1" role="dialog" aria-labelledby="ModalTrailerOverlay" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div id="TrailerDialog" class="modal-content">
+            <div id="TrailerBody" class="modal-body">
+                <div id="theatre">
+                    <em id="curtain-left"></em>
+                    <em id="curtain-right"></em>
+                    
+                    <iframe id="TrailerVideo" class="pt-2" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

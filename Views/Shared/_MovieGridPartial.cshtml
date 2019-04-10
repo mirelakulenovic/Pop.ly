@@ -1,0 +1,10 @@
+﻿@model Pop.ly.Models.MovieGridViewModel
+<h1>@Model.ViewTitle</h1>
+<div class="row">
+  
+        @foreach (var movie in Model.movies)
+        {
+            @Html.Partial("_MovieCardPartial", movie)
+        }
+ 
+</div>

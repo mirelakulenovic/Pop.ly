@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Pop.ly.Models.Database.OrderRow>
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model)
+        {
+            <tr>
+                <th scope="row">#</th>
+                <td>@row.Movie.Title</td>
+                <td>@row.Quantity</td>
+                <td>@row.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

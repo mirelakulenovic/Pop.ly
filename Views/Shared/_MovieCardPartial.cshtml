@@ -1,0 +1,21 @@
+﻿
+@model Pop.ly.Models.Database.Movie
+
+<a class="MovieCardWrapper" href="/Movie/?T=@Model.Title&Y=@Model.ReleaseYear">
+    <div class="SingleMovie" style="background-image: url(@Model.CoverArt)">
+        <div class="SingleMovieDetails">
+            <div class="MovieDetailCardHeader">
+                <h5>@Model.Title</h5>
+                @Model.ReleaseYear
+            </div>
+            <div class="MovieDetailCardContent">
+                <div class="MovieRating">
+                    <span class="stars">@Model.Rating</span>
+                </div>
+            </div>
+            <div class="MovieDetailCardFooter">
+                <span class="badge badge-pill badge-golden justify-content-center"><i class="fas fa-dollar-sign"></i> @Model.Price</span>
+            </div>
+        </div>
+    </div>
+</a>

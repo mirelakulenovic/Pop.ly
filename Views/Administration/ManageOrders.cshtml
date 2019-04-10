@@ -1,0 +1,62 @@
+﻿@model Pop.ly.Models.OrderAdminViewModel
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div class="container pt-4 mt-4">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date</th>
+                <th scope="col">Recipient</th>
+                <th scope="col">Address</th>
+                <th scope="col">Cost</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.AllOrders)
+            {
+                <tr>
+                    <th scope="row">@obj.Order.ID</th>
+                    <td>@obj.Order.User.FirstName @obj.Order.User.LastName</td>
+                    <td>@obj.Order.User.Email</td>
+                    <td>@obj.Order.OrderDate</td>
+                    <td>@obj.Order.Recipient</td>
+                    <td>@obj.Order.DeliveryAddress<br />
+                    @obj.Order.DeliveryZip <b>@obj.Order.DeliveryCity</b></td>
+                    <td>@obj.TotalCost</td>
+                    <td><a href="#" data-toggle="collapse" data-target="#Order-@obj.Order.ID">View Details</a>
+                </tr>
+                    <tr>
+                        <td colspan="6">
+                            <div id="Order-@obj.Order.ID" class="collapse">
+                                <table class="w-100">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Movie</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var row in obj.OrderRows)
+                                        {
+                                            <tr>
+                                                <td><a href="/Movie/?T=@row.Movie.Title&Y=@row.Movie.ReleaseYear">@row.Movie.Title</a></td>
+                                                <td>@row.Quantity</td>
+                                                <td>@row.Price</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>

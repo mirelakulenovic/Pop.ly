@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Pop.ly.Models.Database.Movie>
+
+<hr />
+<div class="owl-carousel">
+    @*<span class="MovieRibbonController MovieRibbonLeftControl">
+        <i class="fas fa-angle-left"></i>
+    </span>
+    <span class="MovieRibbonController MovieRibbonRightControl">
+        <i class="fas fa-angle-right"></i>
+    </span>*@
+    @foreach (var movie in Model)
+    {
+        @Html.Partial("_MovieCardPartial", movie)
+    }
+
+</div>
+
+<hr />

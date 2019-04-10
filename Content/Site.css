@@ -1,0 +1,788 @@
+﻿@import url('https://use.fontawesome.com/releases/v5.0.10/css/all.css');
+body {
+    padding-bottom: 20px;
+    height: 100%;
+    background: linear-gradient(to bottom, #000323 0%,#000000 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+.navbar {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.admin-nav {
+    height: 42px;
+    top: 57px;
+    background-color: rgba(40, 25, 61, 1);
+    border-bottom: 2px solid;
+    border-color: goldenrod;
+    z-index: 100;
+}
+
+.top-menu {
+    background-color: purple;
+    background: linear-gradient(to bottom, #1C0025,#28193D );
+    border-bottom: 2px solid;
+    border-color: goldenrod;
+}
+
+.btn.btn-square {
+    border-radius: 0;
+}
+
+.btn.btn-square-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.carousel-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 460px;
+    max-height: 460px;
+}
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+.carousel-caption {
+    text-shadow: 2px 2px 12px #111111, 2px 2px 24px #999999;
+}
+
+
+#promo-carousel img {
+    width: 80%;
+}
+
+#MovieDetailsCoverSection button {
+    width: 100%;
+}
+
+.MovieDetailPromoBackground {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+#DetailCover {
+    display: inline-flex;
+    width: 100%;
+}
+
+.registration-card {
+    background-color: #1C0025;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    border: solid;
+    border-color: goldenrod;
+}
+
+#movie-details {
+    /* Handles the gradient over the promo art on the movie details */
+    background: radial-gradient(farthest-corner at 40px 40px, rgba(35,6,43,1) 50%,rgba(35,6,43,0.8) 75%,rgba(255,255,255,0) 100%);
+}
+
+.review-section {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 100%;
+    background: linear-gradient(to bottom, rgb(14, 0, 36), rgb(10, 0, 10));
+    box-shadow: 0px 0px 12px 16px rgba(0, 0, 0, 0.4) inset;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 48px 32px 48px;
+    background-color: rgba(49, 0, 61, 0.6);
+    box-shadow: 0px 0px 24px 2px rgba(0, 0, 0, 0.8);
+    border: 1px solid;
+    border-color: goldenrod;
+}
+
+.review-rating {
+    display: flex;
+    margin: 12px 16px 12px 16px;
+    padding-bottom: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid;
+    border-color: darkgoldenrod;
+}
+
+.review-body {
+    width: 370px;
+    flex: 1;
+    padding: 0px 12px 0px 12px;
+    align-self: center;
+}
+
+.review-name {
+    align-self: flex-end;
+    margin: 12px 16px 12px 16px;
+    font-style: italic;
+}
+
+#SearchContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+#searchbar {
+    border: 2px solid;
+    border-radius: 8rem;
+    height: 44px;
+    width: 75% !important;
+}
+
+#browsermovieobj {
+    background-color: aquamarine;
+}
+
+    #browsermovieobj img {
+        max-height: 230px;
+    }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1C0025;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 1px 4px 26px rgba(0, 0, 0, 1);
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+/* Genre filter in browse */
+.GenreCloud {
+
+}
+.GenreFilterButton {
+    padding: 4px !important;
+    background: linear-gradient(#2a023c, #120215);
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.5);
+    margin: 6px;
+    font-size: 20px !important;
+    color: goldenrod !important;
+
+    
+}
+
+.GenreFilterButton:hover {
+    text-shadow: 0px 0px 8px gold;
+    background: radial-gradient(#2a023c, #120215);
+    border-color: rgba(218, 165, 32, 0.9);
+    background-image:url()
+}
+
+/* Movie detail trailer stuff */
+
+#TrailerToggle {
+    background-color: darkgoldenrod;
+}
+
+#TrailerDialog {
+    background-color: black;
+    box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.5), 0 0px 0px 5px rgba(255, 140, 30, 0.125);
+}
+
+#TrailerVideo {
+    width: 100%;
+    height: 440px;
+}
+
+#TrailerBody {
+    margin: 0;
+    padding: 0;
+}
+
+/* Trailer curtain*/
+#theatre {
+    border: inset gold 10px;
+    height: 480px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    line-height: 120px;
+    position: relative;
+    overflow: hidden;
+    background: black;
+    color: rgba(255,255,255, 0.3);
+}
+
+div#theatre #curtain-left, div#theatre #curtain-right {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: -30px;
+    bottom: -30px;
+    width: 61%;
+    transition: all 2s ease-out;
+    transform: rotate(0deg);
+    background-color:#800c0c; 
+    background-image: linear-gradient(90deg, transparent 10%, rgba(255,0,0,.30) 50%,transparent 65% );
+    background-repeat: repeat;
+    box-shadow: 0 0 10px #555,inset 0 -60px 60px -30px rgba(0,0,0, 1), inset 0 90px 60px -30px rgba(0,0,0, 0.5);
+    background-size: 80px;
+}
+
+#curtain-left {
+    left: -10%;
+}
+
+#curtain-right {
+    right: -10%;
+}
+
+#theatre:hover #curtain-right, div#theatre:hover #curtain-left {
+    width: 0;
+    background-size: 1px;
+    transition: all 2s ease;
+    transform: rotate(15deg);
+}
+
+#theatre:hover #curtain-right {
+    transition: all 2s ease;
+    transform: rotate(-15deg);
+}
+
+#theatre p {
+    width: 50%;
+    margin: 0.5em auto;
+    position: relative;
+    z-index: 3;
+}
+
+    #theatre p:first-of-type:before {
+        content: '';
+        position: absolute;
+        border-radius: 150px;
+        box-shadow: 0 0 10px 70px rgba(255,255,255,0.4);
+        height: 0.1px;
+        width: 3px;
+        top: 6.5em;
+        left: 49%;
+        transform: rotate(25deg) skew(15deg,5deg);
+    }
+
+/* Movie Review Stuff*/
+
+#ReviewForm {
+    background-color: rgb(10, 2, 22);
+}
+
+.badge-golden {
+    background-color: goldenrod;
+    color: white;
+    text-decoration: none;
+}
+
+    .badge-golden:hover {
+        text-decoration: none;
+        color: white !important;
+        box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+    }
+
+/* Gradient transparent - color - transparent */
+
+hr.golden-fade-right {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(rgba(218, 165, 32, 0.75), rgba(0, 0, 0, 0));
+}
+
+#DetailsMovieTitle {
+    text-decoration-style: wavy;
+    text-decoration-color: white;
+}
+
+.MainPageHeader {
+    display: flex;
+    align-items: center;
+    height: 42px;
+}
+
+    .MainPageHeader h3 {
+        margin: 0;
+        padding: 0;
+        margin-left: 18px;
+        padding-left: 8px;
+        border-left: 4px solid;
+        border-color: goldenrod;
+    }
+
+/* Owl Carousel stuff*/
+
+.owl-carousel .owl-stage {
+    display: flex;
+    background: linear-gradient(to bottom, #200021 0%,#1b001c 100%);
+    height: 330px;
+    align-items: center;
+    box-shadow: inset 0px 0px 24px 6px rgba(0,0,0,0.5);
+}
+
+.owl-carousel .owl-item img {
+    max-height: 260px;
+}
+
+.owl-nav {
+    display: inline-flex;
+}
+
+.owl-prev {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 35%;
+}
+
+.owl-next {
+    position: absolute;
+    right: 20px;
+    top: 35%;
+}
+
+    .owl-prev:focus, .owl-next:focus {
+        outline: none;
+    }
+
+    .owl-prev i, .owl-next i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 60px;
+        background-color: rgba(40,0,30,0.8);
+        border-radius: 80px;
+        box-shadow: 0 0px 0px 2px rgba(255, 255, 255, 0.3);
+    }
+
+        .owl-prev i:hover, .owl-next i:hover {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 60px;
+            background-color: rgba(60,0,50,0.9);
+            border-radius: 80px;
+            box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
+        }
+/*Movie Ribbon, mostly not used*/
+.MovieRibbon {
+    display: flex;
+    max-height: 280px;
+    overflow: hidden;
+}
+
+.MovieRibbonContent {
+    margin: 6px;
+    max-height: 260px;
+    align-self: center;
+    z-index: -1;
+}
+
+    .MovieRibbonContent img {
+        max-height: 260px;
+    }
+
+.MovieRibbonController {
+    display: inline-flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    height: 260px;
+    padding: 20px;
+}
+
+.MovieRibbonLeftControl {
+    position: absolute;
+    left: 0;
+}
+
+.MovieRibbonRightControl {
+    position: absolute;
+    right: 0;
+}
+
+.MovieRibbonController i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 80px;
+    box-shadow: 0 0px 0px 2px rgba(255, 255, 255, 0.3);
+}
+
+    .MovieRibbonController i:hover {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 60px;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 80px;
+        box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
+    }
+
+.RibbonContent img {
+    max-height: 240px;
+}
+
+.SingleMovie {
+    display: flex;
+    width: 160px;
+    height: 215px;
+    background-position: center;
+    background-size: cover;
+    text-decoration: none;
+    color: white;
+    margin: 12px;
+    box-shadow: 0 0px 16px 3px rgba(0, 0, 0, 0.5);
+}
+
+    .SingleMovie:Hover {
+        box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 32px 20px rgba(0, 0, 0, 0.7);
+        text-decoration: none;
+        animation: pop 0.3 linear 1;
+        transition: all .18s ease-in-out;
+        transform: scale(1.2);
+    }
+
+        .SingleMovie:hover .SingleMovieDetails {
+            display: flex;
+        }
+
+.SingleMovieDetails {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    padding: 4px;
+    background-color: rgba(30, 0, 12, 0.65);
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.MovieDetailCardHeader {
+}
+
+.MovieDetailCardContent {
+    flex: 1;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.MovieDetailCardFooter {
+    margin-bottom: 16px;
+}
+
+.MovieCardWrapper {
+    text-decoration: none;
+}
+
+    .MovieCardWrapper:hover {
+        text-decoration: none;
+    }
+
+.table-dark {
+}
+ /*Rating System*/
+.MovieRating {
+    display: flex;
+    align-self: center;
+}
+span.stars, span.stars span{
+    display: block;
+    background: url(/Content/Images/star/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span.stars span {
+    background-position: 0px 0px;
+    
+}
+
+.btn-golden{
+    font-size: 10px;
+    background-color: goldenrod;
+    color: white;
+}
+
+.btn-golden:hover{
+    background-color: goldenrod;
+    color: white;
+    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+}
+
+a {
+    color: gold;
+}
+
+
+
+/* Stuff pertaining to the detailed customer view */
+.CustomerDetailContainer {
+    display: flex;
+}
+
+.DetailColumn {
+    display: flex;
+    flex: 1;
+    margin: 8px;
+    padding: 8px;
+}
+.CustomerPortrait{
+    padding: 12px;
+    margin-right: 12px;
+    border: 2px solid;
+    background-color: red;
+    border-radius: 128px;
+}
+.CustomerPortrait i {
+    font-size: 48px;
+}
+
+.SiteLogo {
+    height: 32px;
+}
+/* Checkout CSS */
+.OrderShippingDetails {
+    display: flex;
+    flex-direction: row;
+}
+.AddressField {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.06);
+    width: 50%;
+    margin: 12px;
+}
+
+.AddressFieldHeader {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.AddressFieldContent {
+    margin: 12px 24px 0px 24px;
+    flex: 1;
+}
+
+.AddressFieldFooter {
+    margin: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Shopping cart container */
+
+.ShoppingCartContainer {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+
+}
+
+.CartItemContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.CartContainerHead {
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.06);
+    font-size: 22px;
+    width: 260px;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 120px;
+    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+}
+
+.CartItem {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.06);
+    margin: 8px;
+    max-width: 48%;
+}
+
+.CartItemImage {
+    display:flex;
+    margin-left: 8px;
+    width: 110px;
+    height: 175px;
+    background-size: cover;
+    margin-bottom: 8px;
+}
+
+.CartItemDescription {
+    flex: 1;
+    padding: 6px
+}
+
+.CartItemCost {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.35);
+    height: 32px;
+    width: 72px;
+    margin-top: auto;
+    border-radius: 12px 0px 0px 0px;
+}
+
+.CartItemHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.35);
+}
+
+.CartItemHeaderMovieTitle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.CartItemRemove {
+    overflow: hidden;
+}
+
+.CartItemBody {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+}
+
+.CartItemFooter {
+    display: flex;
+    background-color: rgba(0,0,0,0.35);
+    justify-content: center;
+}
+
+.CartItemCountContainer {
+    margin: 4px;
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0.14);
+    border-radius: 140px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.CartItemCountContainer button {
+    border-radius: 0px;
+    background-color: #18021d ;
+}
+
+.CartItemQuantity {
+    display: flex;
+    width: 64px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d083d;
+    text-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+}
+
+.HoverGlow:hover {
+    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+}
+

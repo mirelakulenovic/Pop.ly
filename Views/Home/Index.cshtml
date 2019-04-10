@@ -1,0 +1,34 @@
+﻿@using Pop.ly.Models;
+@using Pop.ly.Models.Database
+@model HomeIndexVieWModel
+
+@{
+    ViewBag.Title = "BUY OUR STUFF";
+}
+
+<div class="container pt-4">
+    @Html.Partial("_MoviePromoCarouselPartial", Model.Carousel)
+</div>
+
+<div class="MainPageHeader mt-4">
+    <h3>Popular</h3>
+</div>
+@Html.Partial("_MovieRibbonPartial", Model.Popular)
+
+<div class="MainPageHeader">
+    <h3>New Releases</h3>
+</div>
+
+@Html.Partial("_MovieRibbonPartial", Model.RecentlyReleased)
+
+<div class="MainPageHeader">
+    <h3>Old Favourites</h3>
+</div>
+
+@Html.Partial("_MovieRibbonPartial", Model.OldestMovies)
+
+<div class="MainPageHeader">
+    <h3>Great Deals</h3>
+</div>
+
+@Html.Partial("_MovieRibbonPartial", Model.CheapestMovies)
